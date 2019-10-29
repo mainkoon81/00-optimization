@@ -1,7 +1,7 @@
 # 00-optimization
 
-## EA
-### What is an Evolutionary Algorithm? 
+## Gradient-Free Optimization
+### 1.EA: What is an Evolutionary Algorithm? 
 Given a population of individuals, the environmental pressure causes natural selection(survival of the fittest) which causes a rise in the fitness of the population.
  - Given a `quality function` to be maximized, we can randomly create a set of candidate solutions and use the `quality function` as an abstract fitness measure. 
  - Based on this fitness, some of the better candidate solutions are chosen to seed the next generation by applying `recombination / mutation` to them.
@@ -22,7 +22,7 @@ Typically the candidate solutions are represented by different encoding.
  
 ### [variation and selection] 
 The **variational operators** working on the candidate solutions must match the given representation. For example:
- - for solving a **Boolean satisfiablity problem**(boolean formula with `0/1`, `and, or, not`... : `satisfied`/`unsatisfied`), the straighforward choice would be to use `bit-strings of length n` (where n is the number of logical variables) => so go with `Genetic Algorithm`. The `recombination operator` works on `strings`! 
+ - for solving a **Boolean satisfiabilty problem**(boolean formula with `0/1`, `and, or, not`... : `satisfied`/`unsatisfied`), the straighforward choice would be to use `bit-strings of length n` (where n is the number of logical variables) => so go with `Genetic Algorithm`. The `recombination operator` works on `strings`! 
  - for evolving a computer program that can play checkers, `trees`(as the synthetic expression forming the programs) are well suited => so go with `Genetic Programming`. The `recombination operator` works on `trees`!
 
 The **selection operator** takes only the `fitness information` into account, hence it works independently from the actual representation.   
