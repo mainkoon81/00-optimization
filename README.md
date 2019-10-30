@@ -1,7 +1,7 @@
 # 00-optimization
 
 ## Gradient-Free Optimization
-### 1.EA: What is an Evolutionary Algorithm? 
+### A. EA...What is an Evolutionary Algorithm? 
 Given a population of individuals, the environmental pressure causes natural selection(survival of the fittest) which causes a rise in the fitness of the population.
  - Given a `quality function` to be maximized, we can randomly create a set of candidate solutions and use the `quality function` as an abstract fitness measure. 
  - Based on this fitness, some of the better candidate solutions are chosen to seed the next generation by applying `recombination / mutation` to them.
@@ -22,8 +22,8 @@ Typically the candidate solutions are represented by different encoding.
  
 ### [variation and selection] 
 **Variational Operators** working on the candidate solutions must match the given representation. For example:
- - for solving a **Boolean satisfiabilty problem**(boolean formula with `0/1`, `and, or, not`... : `satisfied`/`unsatisfied`), the straighforward choice would be to use `bit-strings of length n` (where n is the number of logical variables) => so go with `Genetic Algorithm`. The `recombination operator` works on `strings`! 
- - for evolving a computer program that can play checkers, `trees`(as the synthetic expression forming the programs) are well suited => so go with `Genetic Programming`. The `recombination operator` works on `trees`!
+ - for solving a **Boolean satisfiabilty problem**(boolean formula with `0/1`, `and, or, not`... : `satisfied`/`unsatisfied`), the straighforward choice would be to use **bit-strings of length n** (where n is the number of logical variables) => so go with `Genetic Algorithm`. The **recombination operator** works on `strings`! 
+ - for evolving a computer program that can play checkers, `trees`(as the synthetic expression forming the programs) are well suited => so go with `Genetic Programming`. The **recombination operator** works on `trees`!
 
 **Selection Operator** takes only the `fitness information` into account, hence it works independently from the actual representation.   
  
@@ -31,8 +31,8 @@ Typically the candidate solutions are represented by different encoding.
 ```
 Begin
     -Initialize POPULATION with random cadidate solutions;
-    
     -Evaluate each candidate(using fitness func);
+    
     -Repeat until (TERMINATION CONDITION) Do:
          - Select PARENTS
          - Recombine a pair of PARENTS
@@ -51,13 +51,32 @@ Each of below components must be specified to define a particular EA.
    - mutation
  - 6.SURVIVOR selection mechanism
 
-1. REPRESENTATION
+__1. REPRESENTATION__
+Define individuals by linking the **"real world"** to the `"EA world"`; Set up a bridge b/w the **"original problem context"** and the `"problem solving space"` where evolution will take place. The representation step specifies a mapping from the `phenotypes` onto a set of `genotypes`. The term "representation" is synonymous with **encoding**. 
+ - **Genotypes**: The individuals within the EA world (mapping: **encoding**)...we focus on "data structure"!!!!
+ - **Phenotypes**: Objects forming possible solution within the real world (inverse-mapping: **decoding**)
+ - **one genotype implies only one phenotype** while one phenotype does not necessarily imply only one genotype presents. 
+ - For example, given an optimazation problem on integers;
+   - **Phenotype**: "18"
+   - **Genotype**: "10010" (encoding with a binary code)
+     - Note that the whole evolutionary search takes place in the genotype space.
+   - A solution (good phenotype) is obtained by decoding the best genotype after termination. 
 
+__2. Fitness Function__
+Define the basis for selection. Define what improvement means, representing the task to solve.
+ - It assigns a quality measure to "genotypes"...????
+ - It is typically composed from a quality measure in the "phenotype space"(inverse-representation).
+ - It is typically associated with min/max.
 
+__3. Population__
+As a multi-set of genotypes, the role of the population is to **hold possible solutions**....DIVERSITY ?
+ - It forms a **unit of evolution**.
+   - Individuals are just a static object, but the population is changing and adapting... 
+   - In some case, if a population has an additional spatial structure(distance, neighbor, etc.), the additional structure needs to be defined.  
+   - `selection operators` work at **population level** while `variational operators` work at individual level.
+   - DIVERSITY of a population is a measure of "how many different solutions present?" we use entropy equation?
 
-
-
-
+__4. PARENT selection mechanism__
 
 
 
