@@ -72,7 +72,7 @@ Define the basis for selection. Define what improvement means, representing the 
  - It is typically associated with min/max.
 
 __3. Population:__
-As a multi-set of genotypes, **Hold possible solutions**;....need DIVERSITY ? In population, we have set of individuals and each individual in the population is a possible solution for the given problem. We call these individuals as chromosomes. Each chromosome is made up of genes. What are genes ? These are the parameters of the given optimization problem.
+As a multi-set of genotypes, **Hold possible solutions**;....need DIVERSITY ? In population, we have set of individuals and each individual in the population is a possible solution for the given problem. We call these individuals as chromosomes. Each chromosome is made up of genes. What are genes ? These are the parameters of the given optimization problem. Genes correspond to the values for each variable of the problem.
 <img src="https://user-images.githubusercontent.com/31917400/67883939-de6ff700-fb3c-11e9-8e53-d4b0718e11e9.jpg" />
 
  - It forms a **unit of evolution**.
@@ -82,7 +82,8 @@ As a multi-set of genotypes, **Hold possible solutions**;....need DIVERSITY ? In
    - DIVERSITY of a population is a measure of "how many different solutions present?" we use entropy equation?
 
 __4. PARENT selection mechanism:__
-Distinguish **individuals** based on their quality, to allow the better individuals to become parents; Together with the survivor selection mechanism, parent selection(typically probabilistic???) is responsible for pushing quality improvements.    
+Distinguish **individuals** based on their quality, to allow the better individuals to become parents; Together with the survivor selection mechanism, parent selection(typically probabilistic???) is responsible for pushing quality improvements. The basic part of the selection process is to stochastically select from one generation to create the basis of the next generation. The requirement is that the fittest individuals have a greater chance of survival than weaker ones.    
+<img src="https://user-images.githubusercontent.com/31917400/67884215-5e965c80-fb3d-11e9-9518-0d1b8ae842b8.jpg" />
 
 __5. Variation Operators:__
 Creat new **individuals** from old ones; Generate new candidate solutions. 
