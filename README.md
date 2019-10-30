@@ -96,6 +96,7 @@ __6. Survivor Selection:__
 Distinguish **individual** based on their quality. If parent selection is stochastic, survivor selection is deterministic. ??? 
 
 
+### [Case study]: Genetic Algorithm
 
 
 
