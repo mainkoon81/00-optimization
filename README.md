@@ -54,7 +54,7 @@ Each of below components must be specified to define a particular EA.
    - mutation
  - 6.SURVIVOR(replacement) selection mechanism
 
-__1. REPRESENTATION__
+__1. REPRESENTATION:__
 Define individuals by linking the **"real world"** to the `"EA world"`; Set up a bridge b/w the **"original problem context"** and the `"problem solving space"` where evolution will take place. The representation step specifies a mapping from the `phenotypes` onto a set of `genotypes`. The term "representation" is synonymous with **encoding**. 
  - **Genotypes**: The individuals within the EA world (mapping: **encoding**)...we focus on "data structure"!!!!
  - **Phenotypes**: Objects forming possible solution within the real world (inverse-mapping: **decoding**)
@@ -65,13 +65,13 @@ Define individuals by linking the **"real world"** to the `"EA world"`; Set up a
      - Note that the whole evolutionary search takes place in the genotype space.
    - A solution (good phenotype) is obtained by decoding the best genotype after termination. 
 
-__2. Fitness Function__
+__2. Fitness Function:__
 Define the basis for selection. Define what improvement means, representing the task to solve.
  - It assigns a quality measure to "genotypes"...????
  - It is typically composed from a quality measure in the "phenotype space"(inverse-representation).
  - It is typically associated with min/max.
 
-__3. Population__
+__3. Population:__
 As a multi-set of genotypes, **Hold possible solutions**;....need DIVERSITY ?
  - It forms a **unit of evolution**.
    - Individuals are just a static object, but the population is changing and adapting... 
@@ -79,10 +79,10 @@ As a multi-set of genotypes, **Hold possible solutions**;....need DIVERSITY ?
    - `selection operators` work at **population level** while `variational operators` work at individual level.
    - DIVERSITY of a population is a measure of "how many different solutions present?" we use entropy equation?
 
-__4. PARENT selection mechanism__
+__4. PARENT selection mechanism:__
 Distinguish **individuals** based on their quality, to allow the better individuals to become parents; Together with the survivor selection mechanism, parent selection(typically probabilistic???) is responsible for pushing quality improvements.    
 
-__5. Variation Operators__
+__5. Variation Operators:__
 Creat new **individuals** from old ones; Generate new candidate solutions. 
  - **Recombination Operator**(crossover): It is applied to `2 genotypes`, merging information from the two into one new genotype(prospective child).
    - It is always stochastic 
@@ -92,7 +92,7 @@ Creat new **individuals** from old ones; Generate new candidate solutions.
    - It is always stochastic 
      - output child relies on using a pseudo random drawing to generate values from some given probability distribution.
      
-__6. Survivor Selection__
+__6. Survivor Selection:__
 Distinguish **individual** based on their quality. If parent selection is stochastic, survivor selection is deterministic. ??? 
 
 
