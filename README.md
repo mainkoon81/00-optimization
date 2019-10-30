@@ -20,7 +20,7 @@ Typically the candidate solutions are represented by **`different encoding`**.
  - **real-valued vectors** in `Evolution Strategy`
  - **finite state machine** in `Evolutionary Programming`
 
-> Unlike traditional optimization techniques, evolutionary algorithms depend on **random sampling**. An evolutionary algorithm has a population of candidate solutions, unlike classical methods, which try to maintain a single best solution.
+### Unlike traditional optimization techniques, EA depend on **random sampling**. EA has a `population of candidate solutions`, unlike classical methods which always try to maintain a single best solution.
 
 
 ### [variation and selection] 
