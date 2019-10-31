@@ -1,4 +1,7 @@
 # Optimization
+<img src="https://user-images.githubusercontent.com/31917400/67963471-91505b80-fbf6-11e9-8718-e9462c829368.jpg" />
+
+Gradient-based optimizers are efficient at finding local minima for high-dimensional, non-linearly-constrained, convex problems; however, most gradient-based optimizers have problems dealing with noisy and discontinuous functions, and they are not designed to handle multi-modal problems or discrete and mixed discrete-continuous design variables. 
 
 ## [Gradient-Free Optimization 01. EA]
 ### What is an Evolutionary Algorithm? 
@@ -6,7 +9,7 @@ Given a population of individuals, the environmental pressure(or our need?) caus
  - There are two fundamental forces forming the basis of evolutionary systems. 
    - **variational operators** create the diversity via crossover & mutation 
    - **selection operator** acts as a force, pushing quality.
-<img src="https://user-images.githubusercontent.com/31917400/67786791-5ff55580-fa67-11e9-813f-a2c214094b3c.jpg" />
+<img src="https://user-images.githubusercontent.com/31917400/67961213-4ed94f80-fbf3-11e9-86c3-f99fcf9c2218.jpg" />
 
 ### Which EA-algorithm?
 Typically the candidate solutions are represented by **`different encoding`**.
@@ -99,6 +102,11 @@ __6. Survivor Selection Mechanism:__
 Distinguish **individual** based on their quality. If parent selection is stochastic, **survivor selection is deterministic**.  
 
 ### [Case study]: Genetic Algorithm
+It's a popular strategy to optimize **non-linear systems** with a large number of variables. 
+ - Parameter: a variable in the system of interest • 
+ - `Gene: encoded form of a parameter being optimized` • 
+ - Chromosome: the complete set of genes (parameters) which uniquely describe an individual • 
+ - Locus: the position of a piece of data within a chromosome
 
 
 
