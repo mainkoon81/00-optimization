@@ -19,7 +19,9 @@ a) **Variational Operators** working on the candidate solutions must match the g
  - for solving a **Boolean satisfiabilty problem**(boolean formula with `0/1`, `and, or, not`... : `satisfied`/`unsatisfied`), the straighforward choice would be to use **bit-strings of length n** (where n is the number of logical variables) => so go with `Genetic Algorithm`. The **recombination operator** works on `strings`! 
  - for evolving a computer program that can play checkers, `trees`(as the synthetic expression forming the programs) are well suited => so go with `Genetic Programming`. The **recombination operator** works on `trees`!
 
-b) **Selection Operator** takes only the `fitness information` into account, hence it works independently from the actual representation....so any EA goes.    
+b) **Selection Operator** takes only the `fitness information` into account, hence it works independently from the actual representation....so any EA goes.
+ - PARENT Selection mechanism
+ - SURVIVOR Selection mechanism
  
 ### [EA-Components]
 ```
@@ -74,9 +76,9 @@ As a multi-set of genotypes, **Hold multiple possible solutions**;....it sounds 
    - `selection operators` work at **population level** while `variational operators` work at individual level.
    - DIVERSITY of a population is a measure of "how many different solutions present?" Do you want to use entropy equation?
 
-__4. PARENT selection mechanism:__
-Distinguish **individuals** based on their quality, to allow the better individuals to become parents; Together with the survivor selection mechanism, parent selection(typically probabilistic???) is responsible for pushing quality improvements. The basic part of the selection process is to stochastically select from one generation to create the basis of the next generation. The requirement is that the fittest individuals have a greater chance of survival than weaker ones.    
-<img src="https://user-images.githubusercontent.com/31917400/67884215-5e965c80-fb3d-11e9-9518-0d1b8ae842b8.jpg" />
+__4. PARENT Selection Mechanism:__
+Distinguish **individuals** based on their quality, to allow the better individuals to become parents; Together with the **survivor selection** mechanism, **parent selection**(typically probabilistic: the fittest individuals have a higher chance) is responsible for pushing quality improvements. The basic part of the selection process is to stochastically(Roulette Wheel) select from one generation to create the basis of the next generation. 
+<img src="https://user-images.githubusercontent.com/31917400/67943941-22154000-fbd3-11e9-9648-cfd202f107e5.jpg" /> These individuals consist of 10 bit chromosomes are being used to optimise a simple mathematical function (we can assume from this example we are trying to find the maximum). If the input range for `x` is between 0 and 10, then we can map the binary chromosomes to base 10 values and then to an input value between 0 and 10. The fitness values are then taken as `f(x)` where individual No. 3 is the fittest and No. 2 is the weakest from the table. Summing these fitness values, we can apportion a percentage total of fitness. This gives the strongest individual a value of 38% and the weakest 5%. These percentage fitness values can then be used to configure the roulette wheel. The number of times the roulette wheel is spun is equal to size of the population. As can be seen from the way the wheel is now divided, each time the wheel stops this gives the fitter individuals the greatest chance of being selected for the next generation and subsequent mating pool.
 
 __5. Variation Operators:__
 Creat new **individuals** from old ones; Generate new candidate solutions. 
@@ -98,7 +100,7 @@ Creat new **individuals** from old ones; Generate new candidate solutions.
    
 
 
-__6. Survivor Selection:__
+__6. Survivor Selection Mechanism:__
 Distinguish **individual** based on their quality. If parent selection is stochastic, survivor selection is deterministic. ??? 
 
 
