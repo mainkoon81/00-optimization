@@ -59,7 +59,7 @@ Define individuals by linking the **"real world"** to the `"EA world"`; Set up a
    - A solution (good phenotype) is obtained by decoding the best genotype after termination. 
 
 __2. Fitness Function:__
-Define the basis for selection. Define what improvement means, representing the task to solve. This fitness function is a problem itself. It can be a mathematical equation that calculates the output based on the inputs. It might be a computer program or even a simulator. There is only one condition for a fitness function to follow, as the name suggests, it should be a function and a function always retains a unique value for every unique combination of inputs or parameters.
+Define the basis for selection. Define what improvement means, representing the task to solve. This fitness function is a problem itself. It can be a mathematical equation that calculates the output based on the inputs. It might be a computer program or even a simulator. There is only one condition for a fitness function to follow, as the name suggests, it should be a function and a function always retains a unique value for every unique combination of inputs or parameters(features).
  - It assigns a quality measure to "genotypes"...????
  - It is typically composed from a quality measure in the "phenotype space"(inverse-representation).
  - It is typically associated with min/max.
@@ -67,8 +67,8 @@ Define the basis for selection. Define what improvement means, representing the 
 __3. Population:__
 ### Unlike traditional optimization techniques, EA depend on **random sampling**. EA has a `population of candidate solutions`, unlike classical methods which always try to maintain a single best solution.
 
-As a multi-set of genotypes, **Hold multiple possible solutions**;....it sounds DIVERSITY ? In population, we have set of individuals and each individual in the population is a possible solution for the given problem. We call these individuals as chromosomes. Each chromosome is made up of genes. What are genes ? These are the parameters of the given optimization problem. Genes correspond to the values for each variable of the problem.
-<img src="https://user-images.githubusercontent.com/31917400/67883939-de6ff700-fb3c-11e9-8e53-d4b0718e11e9.jpg" />
+As a multi-set of genotypes, **Hold multiple possible solutions**;....it sounds DIVERSITY ? In population, we have set of individuals and each individual in the population is a possible solution for the given problem. We call these individuals as chromosomes. Each chromosome is made up of genes. What are genes ? These are the parameters(features) of the given optimization problem. Genes correspond to the values for each variable of the problem.
+<img src="https://user-images.githubusercontent.com/31917400/67957182-20587600-fbed-11e9-886a-4c64fa71c48b.jpg" />
 
  - It forms a **unit of evolution**.
    - Individuals are just a static object, but the population is changing and adapting... 
