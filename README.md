@@ -78,31 +78,25 @@ As a multi-set of genotypes, **Hold multiple possible solutions**;....it sounds 
 
 __4. PARENT Selection Mechanism:__
 Distinguish **individuals** based on their quality, to allow the better individuals to become parents; Together with the **survivor selection** mechanism, **parent selection**(typically probabilistic: the fittest individuals have a higher chance) is responsible for pushing quality improvements. The basic part of the selection process is to stochastically(Roulette Wheel) select from one generation to create the basis of the next generation. 
-<img src="https://user-images.githubusercontent.com/31917400/67943941-22154000-fbd3-11e9-9648-cfd202f107e5.jpg" /> These individuals consist of 10 bit chromosomes are being used to optimise a simple mathematical function (we can assume from this example we are trying to find the maximum). If the input range for `x` is between 0 and 10, then we can map the binary chromosomes to base 10 values and then to an input value between 0 and 10. The fitness values are then taken as `f(x)` where individual No. 3 is the fittest and No. 2 is the weakest from the table. Summing these fitness values, we can apportion a percentage total of fitness. This gives the strongest individual a value of 38% and the weakest 5%. These percentage fitness values can then be used to configure the roulette wheel. The number of times the roulette wheel is spun is equal to size of the population. As can be seen from the way the wheel is now divided, each time the wheel stops this gives the fitter individuals the greatest chance of being selected for the next generation and subsequent mating pool.
+<img src="https://user-images.githubusercontent.com/31917400/67944833-58ec5580-fbd5-11e9-843f-d7271a925199.jpg" /> These individuals consist of 10 bit chromosomes are being used to optimise a simple mathematical function (we can assume from this example we are trying to find the maximum). If the input range for `x` is between 0 and 10, then we can map the binary chromosomes to base 10 values and then to an input value between 0 and 10. The fitness values are then taken as `f(x)` where individual No. 3 is the fittest and No. 2 is the weakest from the table. Summing these fitness values, we can apportion a percentage total of fitness. This gives the strongest individual a value of 38% and the weakest 5%. These percentage fitness values can then be used to configure the roulette wheel. The number of times the roulette wheel is spun is equal to size of the population. As can be seen from the way the wheel is now divided, each time the wheel stops this gives the fitter individuals the greatest chance of being selected for the next generation and subsequent mating pool.
 
 __5. Variation Operators:__
-Creat new **individuals** from old ones; Generate new candidate solutions. 
- - **Recombination Operator**(crossover): It is applied to `2 genotypes`, merging information from the two into one new genotype(prospective child).
+Creat new **individuals** from old ones; Generate new candidate solutions. The `recombination`(crossover) is applied to **multiple** selected candidates(parents), then results some new candidates(children). The `mutation` is applied to a **single** candidate, then results in one new candidate. Executing `recombination` and `mutation` leads to a set of **new offsprings** that compete with the old ones for a place in the next generation. This process will be iterated until a candidate with sufficient quality(solution) is found or a previously set computational limit is reached. 
+ - a) **Recombination Operator**(crossover): It is applied to `2 genotypes`, merging information from the two into one new genotype(prospective child).
    - It is always stochastic 
      - choice of what parts of each parent.  
      - the way they are combined.
- - **Mutation Operator**: It is applied to `1 genotype` and delivers a modified mutant: a **CHILD**.
+       - one point crossover: select a random crossover point and the tails of both the chromosomes are swapped to produce a new off-springs.
+       - multi point crossover: select multiple random crossover points and the multiple places of both the chromosomes are swapped to produce a new off-springs.
+     <img src="https://user-images.githubusercontent.com/31917400/67945540-0dd34200-fbd7-11e9-8b86-acec74649d28.jpg" />
+     
+ - b) **Mutation Operator**: It is applied to `1 genotype` and delivers a modified mutant: a **CHILD**. This may be defined as a random tweak in the chromosome, which promotes the idea of **diversity** in the population. The off-springs thus produced are again validated using the fitness function, and if considered fit then will replace the less fit chromosomes from the population.
    - It is always stochastic 
      - output child relies on using a pseudo random drawing to generate values from some given probability distribution.
-
- - Given a `quality function` to be maximized, we can randomly create a set of candidate solutions and use the `quality function` as an abstract fitness measure. 
- - Based on this fitness, some of the better candidate solutions are chosen to seed the next generation by applying `recombination / mutation` to them.
-   - `recombination`(crossover) is a **variational operator** applied to multiple selected candidates(parents), then results some new candidates(children).
-   - `mutation` is a **variational operator** applied to one candidate, then results in one new candidate. 
-   - Executing `recombination` and `mutation` leads to a set of **new offsprings** that compete with the old ones for a place in the next generation. This process will be iterated until a candidate with sufficient quality(solution) is found or a previously set computational limit is reached. 
-   
-   
-   
-
+     <img src="https://user-images.githubusercontent.com/31917400/67945791-af5a9380-fbd7-11e9-8a1a-9682548ef6e4.jpg" />
 
 __6. Survivor Selection Mechanism:__
-Distinguish **individual** based on their quality. If parent selection is stochastic, survivor selection is deterministic. ??? 
-
+Distinguish **individual** based on their quality. If parent selection is stochastic, **survivor selection is deterministic**.  
 
 ### [Case study]: Genetic Algorithm
 
