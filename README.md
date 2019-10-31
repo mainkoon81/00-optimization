@@ -103,9 +103,9 @@ Distinguish **individual** based on their quality. If parent selection is stocha
 
 ### [Case study]: Genetic Algorithm
 It's a popular strategy to optimize **non-linear systems** with a large number of variables. 
- - Parameter: a variable in the system of interest • 
- - `Gene: encoded form of a parameter being optimized` • 
- - Chromosome: the complete set of genes (parameters) which uniquely describe an individual • 
+ - Parameters: variables in the system of interest...`phenotype`
+ - `Gene`: encoded form of a parameter being optimized...`genotype` 
+ - `Chromosome`: the complete set of genes which uniquely describe an individual
  - Locus: the position of a piece of data within a chromosome
 
 
