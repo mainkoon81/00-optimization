@@ -1,34 +1,25 @@
-# 00-optimization
+# Optimization
 
-## Gradient-Free Optimization
-### A. EA...What is an Evolutionary Algorithm? 
-Given a population of individuals, the environmental pressure causes natural selection(survival of the fittest) which causes a rise in the fitness of the population.
- - Given a `quality function` to be maximized, we can randomly create a set of candidate solutions and use the `quality function` as an abstract fitness measure. 
- - Based on this fitness, some of the better candidate solutions are chosen to seed the next generation by applying `recombination / mutation` to them.
-   - `recombination`(crossover) is a **variational operator** applied to multiple selected candidates(parents), then results some new candidates(children).
-   - `mutation` is a **variational operator** applied to one candidate, then results in one new candidate. 
-   - Executing `recombination` and `mutation` leads to a set of **new offsprings** that compete with the old ones for a place in the next generation. This process will be iterated until a candidate with sufficient quality(solution) is found or a previously set computational limit is reached. 
+## [Gradient-Free Optimization 01. EA]
+### What is an Evolutionary Algorithm? 
+Given a population of individuals, the environmental pressure(or our need?) causes natural selection(survival of the fittest) which causes a rise in the fitness of the population. It helps the evolution by approaching optimal values.   
  - There are two fundamental forces forming the basis of evolutionary systems. 
-   - **variational operators** create the diversity. 
+   - **variational operators** create the diversity via crossover & mutation 
    - **selection operator** acts as a force, pushing quality.
- - It helps the evolution optimise/approximise by approaching optimal values.   
- <img src="https://user-images.githubusercontent.com/31917400/67786791-5ff55580-fa67-11e9-813f-a2c214094b3c.jpg" />
+<img src="https://user-images.githubusercontent.com/31917400/67786791-5ff55580-fa67-11e9-813f-a2c214094b3c.jpg" />
 
+### Which EA-algorithm?
 Typically the candidate solutions are represented by **`different encoding`**.
  - **strings** over a finite alphabet in `Genetic Algorithm`
  - **trees** in `Genetic Programming`
  - **real-valued vectors** in `Evolution Strategy`
  - **finite state machine** in `Evolutionary Programming`
 
-### Unlike traditional optimization techniques, EA depend on **random sampling**. EA has a `population of candidate solutions`, unlike classical methods which always try to maintain a single best solution.
-
-
-### [variation and selection] 
-**Variational Operators** working on the candidate solutions must match the given representation. For example:
+a) **Variational Operators** working on the candidate solutions must match the given representation. For example:
  - for solving a **Boolean satisfiabilty problem**(boolean formula with `0/1`, `and, or, not`... : `satisfied`/`unsatisfied`), the straighforward choice would be to use **bit-strings of length n** (where n is the number of logical variables) => so go with `Genetic Algorithm`. The **recombination operator** works on `strings`! 
  - for evolving a computer program that can play checkers, `trees`(as the synthetic expression forming the programs) are well suited => so go with `Genetic Programming`. The **recombination operator** works on `trees`!
 
-**Selection Operator** takes only the `fitness information` into account, hence it works independently from the actual representation.   
+b) **Selection Operator** takes only the `fitness information` into account, hence it works independently from the actual representation....so any EA goes.    
  
 ### [EA-Components]
 ```
@@ -72,14 +63,16 @@ Define the basis for selection. Define what improvement means, representing the 
  - It is typically associated with min/max.
 
 __3. Population:__
-As a multi-set of genotypes, **Hold possible solutions**;....need DIVERSITY ? In population, we have set of individuals and each individual in the population is a possible solution for the given problem. We call these individuals as chromosomes. Each chromosome is made up of genes. What are genes ? These are the parameters of the given optimization problem. Genes correspond to the values for each variable of the problem.
+### Unlike traditional optimization techniques, EA depend on **random sampling**. EA has a `population of candidate solutions`, unlike classical methods which always try to maintain a single best solution.
+
+As a multi-set of genotypes, **Hold multiple possible solutions**;....it sounds DIVERSITY ? In population, we have set of individuals and each individual in the population is a possible solution for the given problem. We call these individuals as chromosomes. Each chromosome is made up of genes. What are genes ? These are the parameters of the given optimization problem. Genes correspond to the values for each variable of the problem.
 <img src="https://user-images.githubusercontent.com/31917400/67883939-de6ff700-fb3c-11e9-8e53-d4b0718e11e9.jpg" />
 
  - It forms a **unit of evolution**.
    - Individuals are just a static object, but the population is changing and adapting... 
    - In some case, if a population has an additional spatial structure(distance, neighbor, etc.), the additional structure needs to be defined.  
    - `selection operators` work at **population level** while `variational operators` work at individual level.
-   - DIVERSITY of a population is a measure of "how many different solutions present?" we use entropy equation?
+   - DIVERSITY of a population is a measure of "how many different solutions present?" Do you want to use entropy equation?
 
 __4. PARENT selection mechanism:__
 Distinguish **individuals** based on their quality, to allow the better individuals to become parents; Together with the survivor selection mechanism, parent selection(typically probabilistic???) is responsible for pushing quality improvements. The basic part of the selection process is to stochastically select from one generation to create the basis of the next generation. The requirement is that the fittest individuals have a greater chance of survival than weaker ones.    
@@ -94,7 +87,17 @@ Creat new **individuals** from old ones; Generate new candidate solutions.
  - **Mutation Operator**: It is applied to `1 genotype` and delivers a modified mutant: a **CHILD**.
    - It is always stochastic 
      - output child relies on using a pseudo random drawing to generate values from some given probability distribution.
-     
+
+ - Given a `quality function` to be maximized, we can randomly create a set of candidate solutions and use the `quality function` as an abstract fitness measure. 
+ - Based on this fitness, some of the better candidate solutions are chosen to seed the next generation by applying `recombination / mutation` to them.
+   - `recombination`(crossover) is a **variational operator** applied to multiple selected candidates(parents), then results some new candidates(children).
+   - `mutation` is a **variational operator** applied to one candidate, then results in one new candidate. 
+   - Executing `recombination` and `mutation` leads to a set of **new offsprings** that compete with the old ones for a place in the next generation. This process will be iterated until a candidate with sufficient quality(solution) is found or a previously set computational limit is reached. 
+   
+   
+   
+
+
 __6. Survivor Selection:__
 Distinguish **individual** based on their quality. If parent selection is stochastic, survivor selection is deterministic. ??? 
 
