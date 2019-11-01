@@ -142,13 +142,13 @@ In the design of a supersonic aircraft, for example, we might want to simultaneo
 
 The concept of `dominance` is the key to the use of GA’s in multi-objective optimization. As an example, assume we have a population of 3 members, `A`, `B` and `C`, and that we want to minimize two objective functions, `f1` and `f2`. Comparing members `A` and `B`, we can see that `A` has a higher (worse) `f1` than `B`, but has a lower (better) `f2`. Hence we cannot determine whether `A` is better than `B` or vice versa. Comparing `A` and `C`, once again we are unable to say that one is better than the other. 
 
-On the other hand, `B` is clearly a fitter member than `C` since both of `B`’s objectives are lower. We say that `B` **dominates** `C`. <img src="https://user-images.githubusercontent.com/31917400/68038600-3dab4400-fcc2-11e9-846b-9dd55b6d7df8.jpg" />
-   
-The rank of a member is the number of members that dominate it plus one. In this case the ranks of the three members are:
+On the other hand, `B` is clearly a fitter member than `C` since both of `B`’s objectives are lower. We say that `B` **dominates** `C`. <img src="https://user-images.githubusercontent.com/31917400/68038600-3dab4400-fcc2-11e9-846b-9dd55b6d7df8.jpg" /> The rank of a member is the number of members that dominate it plus one. In the case above, the **Pareto set** includes `A` and `B`. 
 
+In multi-objective optimization, the rank is crucial in determining which population member are the fittest. A **solution** of rank one is said to be `Pareto optimal` and the **set** of rank one points for a given generation is called the `Pareto set`. As the number of generations increases, and the fitness of the population improves, the **size of the Pareto set** grows. The graphical representation of a **Pareto set** is called a **Pareto front**. 
 
+The procedure of a two-objective genetic algorithm is similar to the single-objective one, with the following modiﬁcations.
 
-
+1. 
 
 
 
