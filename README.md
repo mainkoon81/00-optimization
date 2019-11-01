@@ -113,6 +113,79 @@ It's a popular strategy to optimize **non-linear systems** with a large number o
 
 Genetic algorithms are radically different from the gradient based methods. Instead of "looking at one point at a time and stepping to a new point for each iteration", **`a whole population of solutions is iterated towards the optimum at the same time`**. Using a population, it explores multiple “buckets” (local minima) simultaneously, **increasing the likelihood of finding the global optimum**. 
 
+### Steps (Single Objective Optimization)
+1. Initialize a Population:
+ - Each member of the population represents a design point `x` and has a value of the objective (fitness), and information about its constraint violations associated with it.
+ 
+2. Determine Mating Pool by `crossover`:
+ - **Each population member** is paired for reproduction by using one of the following methods
+   - Random selection
+   - Based on fitness, make the better members to reproduce more often than the others (parent selection then crossover)
+
+3. Generate children by `mutation`:
+ - Add some randomness in the offspring’s variables to maintain **diversity**.
+ - Compute the fitness.
+
+4. Tournament:
+ - There are different schemes that can be used in this step. One method involves replacing the worst parent from each “family” with the best offspring.
+
+5. Identify the Best Member:
+ - Convergence is difficult to determine because the best solution so far may be maintained for many generations. As a rule of thumb, if the best solution among the current population hasn’t changed (much) for about 10 generations, it can be assumed as the optimum for the problem.
+
+6. Return to Step 2.:
+ - Note that since GAs are probabilistic methods (due to the random initial population and mutation), it is crucial to run the problem multiple times when studying its characteristics.
+
+### Steps (Multi-Objective Optimization)
+> What if we want to investigate the trade-off between two (or more) conflicting objectives? 
+
+In the design of a supersonic aircraft, for example, we might want to simultaneously minimize `aerodynamic drag` and `sonic boom` and we do not know **what the trade-off is**. How much would the drag increase for a given reduction in sonic boom? In this situation there is no one “best design”. **`There is a set (a population) of designs`** that are the best possible for that combination of the two objectives. In other words, for these optimal solutions, the only way to improve one objective is to worsen the other. We have to evaluate a whole population, so we can use this to our advantage. This is much better than using composite weighted functions in conjunction with gradient-based methods since there is no need to solve the problem for various weights. 
+
+The concept of `dominance` is the key to the use of GA’s in multi-objective optimization. As an example, assume we have a population of 3 members, `A`, `B` and `C`, and that we want to minimize two objective functions, `f1` and `f2`. Comparing members `A` and `B`, we can see that `A` has a higher (worse) `f1` than `B`, but has a lower (better) `f2`. Hence we cannot determine whether `A` is better than `B` or vice versa. Comparing `A` and `C`, once again we are unable to say that one is better than the other. 
+
+On the other hand, `B` is clearly a fitter member than `C` since both of `B`’s objectives are lower. We say that `B` **dominates** `C`. <img src="https://user-images.githubusercontent.com/31917400/68038058-f96b7400-fcc0-11e9-9ed4-070e67c59d05.jpg" />
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
