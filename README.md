@@ -166,7 +166,7 @@ for 4. Tournament:
 One of the problems with this method is that there is no mechanism “pushing” the Pareto front to a better one. If one new member dominates every other member, the rank of the other members grows by one and the process continues. Some work has been invested in applying gradients to the front, with mixed results. 
 <img src="https://user-images.githubusercontent.com/31917400/68039752-b14e5080-fcc4-11e9-8c50-a919cebb5f28.jpg" />
 
-
+### Coding/Decoding of variables 
 
 
 
