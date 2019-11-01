@@ -172,7 +172,9 @@ In a few variants of genetic algorithms, the design variables are stored as a ve
 
 ### Creation of the Initial Population
 As a rule of thumb, the population size(number of individuals) should be of 15 to 20 times the number of design variables. Using bit encoding, each bit is assigned a 50% chance of being either 1 or 0. One way of doing this is to generate a random number 0 ≤ `r` ≤ 1 and setting the bit to **0** if `r` ≤ 0.5 and **1** if `r` > 0.5. Each member is chosen at random. For a problem with real design variables and a given variable x:  
-<img src="https://user-images.githubusercontent.com/31917400/68043595-8c121000-fccd-11e9-87e1-a59e18c6b861.jpg" />
+<img src="https://user-images.githubusercontent.com/31917400/68043595-8c121000-fccd-11e9-87e1-a59e18c6b861.jpg" /> Often genetic algorithms represent design variables as a binary number of m bits. The coding and decoding of the design variables then depends on the nature of the design variables themselves. 
+
+
 
 
 
