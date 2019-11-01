@@ -148,13 +148,23 @@ In multi-objective optimization, the rank is crucial in determining which popula
 
 The procedure of a two-objective genetic algorithm is similar to the single-objective one, with the following modiﬁcations.
 
-1. 
+for 1. Initialize a Population: 
+ - Compute all objectives and rank the population according to the definition of **dominance**
 
+for 3. Generate children by `mutation`:
+ - Evaluate their objectives and rank offspring population
 
+for 4. Tournament:
+ - Now this is based on rank rather than objective function
 
+6. Rank New Population:
+ - Display rank one population, that is the Pareto set.
+ 
+7. Repeat From Step 2:
+ - We iterate until the Pareto front is no longer “moving”.
 
-
-
+One of the problems with this method is that there is no mechanism “pushing” the Pareto front to a better one. If one new member dominates every other member, the rank of the other members grows by one and the process continues. Some work has been invested in applying gradients to the front, with mixed results. 
+<img src="https://user-images.githubusercontent.com/31917400/68039752-b14e5080-fcc4-11e9-8c50-a919cebb5f28.jpg" />
 
 
 
