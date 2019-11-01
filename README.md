@@ -107,6 +107,8 @@ It's a popular strategy to optimize **non-linear systems** with a large number o
  - `Gene`: encoded form of a parameter being optimized...`genotype` 
  - `Chromosome`: the complete set of genes which uniquely describe an individual
  - Locus: the position of a piece of data within a chromosome
+Set-up 
+<img src="https://user-images.githubusercontent.com/31917400/68034529-b954c300-fcb9-11e9-994d-3008cd7d30b9.jpg" />
 
 
 
