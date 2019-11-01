@@ -142,8 +142,10 @@ In the design of a supersonic aircraft, for example, we might want to simultaneo
 
 The concept of `dominance` is the key to the use of GA’s in multi-objective optimization. As an example, assume we have a population of 3 members, `A`, `B` and `C`, and that we want to minimize two objective functions, `f1` and `f2`. Comparing members `A` and `B`, we can see that `A` has a higher (worse) `f1` than `B`, but has a lower (better) `f2`. Hence we cannot determine whether `A` is better than `B` or vice versa. Comparing `A` and `C`, once again we are unable to say that one is better than the other. 
 
-On the other hand, `B` is clearly a fitter member than `C` since both of `B`’s objectives are lower. We say that `B` **dominates** `C`. <img src="https://user-images.githubusercontent.com/31917400/68038058-f96b7400-fcc0-11e9-9ed4-070e67c59d05.jpg" />
+On the other hand, `B` is clearly a fitter member than `C` since both of `B`’s objectives are lower. We say that `B` **dominates** `C`. <img src="https://user-images.githubusercontent.com/31917400/68038600-3dab4400-fcc2-11e9-846b-9dd55b6d7df8.jpg" />
    
+The rank of a member is the number of members that dominate it plus one. In this case the ranks of the three members are:
+
 
 
 
