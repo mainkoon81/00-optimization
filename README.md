@@ -107,9 +107,11 @@ It's a popular strategy to optimize **non-linear systems** with a large number o
  - `Gene`: encoded form of a parameter being optimized...`genotype` 
  - `Chromosome`: the complete set of genes which uniquely describe an individual
  - Locus: the position of a piece of data within a chromosome
-Set-up 
+ 
+### Set-up 
 <img src="https://user-images.githubusercontent.com/31917400/68034529-b954c300-fcb9-11e9-994d-3008cd7d30b9.jpg" />
 
+Genetic algorithms are radically different from the gradient based methods. Instead of "looking at one point at a time and stepping to a new point for each iteration", **`a whole population of solutions is iterated towards the optimum at the same time`**. Using a population, it explores multiple “buckets” (local minima) simultaneously, **increasing the likelihood of finding the global optimum**. 
 
 
 
