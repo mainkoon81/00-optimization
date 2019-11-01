@@ -168,7 +168,7 @@ One of the problems with this method is that there is no mechanism “pushing”
 
 ### Coding/Decoding of variables 
 In a few variants of genetic algorithms, the design variables are stored as a vector of **real numbers**. However, genetic algorithms more commonly represent each variable as a **binary number** of say `m` bits(size m). If we want to represent a real-valued variable, **we have to divide the feasible interval of `x_i` into `2^m - 1` intervals**. Then each **possibility** for `x_i` can be represented by any combination of `m` bits. For `m = 5`, for example, the number of intervals would be `31` and a possible representation for `x_i` would be `1``0``1``0``1`, which is decoded as:      
-<img src="https://user-images.githubusercontent.com/31917400/68042603-35a3d200-fccb-11e9-9b54-ae8465d9998a.jpg" />
+<img src="https://user-images.githubusercontent.com/31917400/68043157-8f58cc00-fccc-11e9-8c64-c0ce6466ed93.jpg" />
 
 
 
