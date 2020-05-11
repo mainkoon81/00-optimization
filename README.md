@@ -76,7 +76,7 @@ As a multi-set of genotypes, **Hold multiple possible solutions**;....it sounds 
  - It forms a **unit of evolution**.
    - Individuals are just a static object, but the population is changing and adapting... 
    - In some case, if a population has an additional spatial structure(distance, neighbor, etc.), the additional structure needs to be defined.  
-   - `selection operators` work at **population level** while `variational operators` work at individual level.
+   - `selection operators` work at **population level** while `variational operators` work at individual level..
    - DIVERSITY of a population is a measure of "how many different solutions present?" Do you want to use entropy equation?
 
 __4. PARENT Selection Mechanism:__
