@@ -3,7 +3,7 @@
 
 Gradient-based optimizers are efficient at finding local minima for high-dimensional, non-linearly-constrained, convex problems; however, most gradient-based optimizers have problems dealing with noisy and discontinuous functions, and they are not designed to handle multi-modal problems or discrete and mixed discrete-continuous design variables. 
 
-## [Gradient-Free Optimization 01. EA]
+## [Gradient-Free Optimization 01. Evolutionary Algorithms]
 ### What is an Evolutionary Algorithm? 
 Given a population of individuals, the environmental pressure(or our need?) causes natural selection(survival of the fittest) which causes a rise in the fitness of the population. It helps the evolution by approaching optimal values.   
  - There are two fundamental forces forming the basis of evolutionary systems. 
